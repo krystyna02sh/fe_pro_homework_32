@@ -22,6 +22,7 @@ npm-debug.log*
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 /node_modules
 
+
 # Lock files
 # https://stackoverflow.com/questions/45022048/why-does-npm-install-rewrite-package-lock-json
 package-lock.json
@@ -30,3 +31,6 @@ package-lock.json
 
 # dotenv environment variables file
 .env
+
+
+/client
