@@ -10,6 +10,7 @@
     "start": "npm-run-all --parallel watch:dist watch:server",
     "watch:dist": "webpack --progress --watch",
     "watch:server": "nodemon server/index.mjs --watch dist --watch server",
+    "render:start": "node server/index.mjs",
     "serve": "webpack serve"
   },
   "author": "Krystyna",
