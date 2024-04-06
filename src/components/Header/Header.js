@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import buy from "../Images/basket.png";
 
 const Header = () => {
     return (
@@ -7,16 +8,17 @@ const Header = () => {
             <nav>
                 <ul className='flex-nav'>
                     <li className='item'>
-                        <Link to="/">Main</Link>
+                        <Link to="/">Головна</Link>
                     </li>
                     <li className='item'>
-                        <Link to="/about">About page</Link>
+                        <Link to="/about">Про нас</Link>
                     </li>
                     <li className='item'>
-                        <Link to="/menu">Menu</Link>
+                        <Link to="/menu">Меню</Link>
                     </li>
                     <li className='item'>
-                        <Link to="/basket">Basket</Link>
+                        <Link to="/basket"><img className='basket' src={buy} alt="basket"></img></Link>
+
                     </li>
                 </ul>
             </nav>

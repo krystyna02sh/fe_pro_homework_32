@@ -1,15 +1,12 @@
 import React from "react";
-import Piza from "../Pizza/Piza";
-import Paperoni from "../Pizza/Paperoni";
-import Vegan from "../Pizza/Vegan";
+import MainImg from "../MainImg/MainImg";
+import Discount from "../Discount/Discount";
 const Main = () => {
     return (
-        <div className="card-container">
-            <Piza />
-            <Paperoni />
-            <Vegan />
+        <div className="container">
+            <MainImg />
+            <Discount />
         </div>
-
     );
 }
 export default Main;
