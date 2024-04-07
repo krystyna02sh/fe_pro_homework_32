@@ -199,3 +199,28 @@ footer {
   display: flex;
   align-items: center;
 }
+.category-btnactive {
+  padding: 10px 12px 10px 12px;
+  aspect-ratio: 4/1;
+  background-color: #dc780b;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+.category-btn {
+  padding: 10px 12px 10px 12px;
+  aspect-ratio: 4/1;
+  border-radius: 5px;
+  border: 1px solid;
+  color: #dc780b;
+  font-size: 20px;
+  text-align: center;
+}
+.toggler {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
