@@ -1,25 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
-import pizza from "../Images/pizza.jpg";
-import pizza2 from "../Images/pizza2.jpg";
-import pizza3 from "../Images/pizza3.jpg";
-import pizza5 from "../Images/pizza5.jpg";
-import pizza6 from "../Images/pizza6.jpg";
-import pizza7 from "../Images/pizza7.jpg";
-import americano from "../Images/americano.jpg";
-import espreso from "../Images/espreso.jpg";
-import capuchino from "../Images/capuchino.jpg";
-import late from "../Images/late.jpg"
+import { useDispatch, useSelector } from "react-redux"
+import { changeCategory } from '../../redux/menuReducer';
 
-const categories = [{
-    id: "pizza",
-    title: "Піца"
-},
-{
-    id: "coffee",
-    title: "Кава"
 
-}]
 const list = [{
     id: "fjgkyg",
     title: "Папероні",
@@ -32,7 +15,7 @@ const list = [{
     id: "fарер",
     title: "Вегетеріанська",
     price: "270",
-    imagePath: require('../Images/pizza2.jpg').default,
+    imagePath: require('../Images/pizza3.jpg').default,
     description: "Тісто для піци, соус томатний, моцарела, помідори, перець, гриби, оливки",
     categoryId: "pizza"
 },
@@ -40,7 +23,7 @@ const list = [{
     id: "bljb",
     title: "Маргарита",
     price: "250",
-    imagePath: require('../Images/pizza3.jpg').default,
+    imagePath: require('../Images/pizza2.jpg').default,
     description: "Тісто для піци, соус томатний, моцарела, базилік, оливкова олія",
     categoryId: "pizza"
 },
@@ -103,13 +86,15 @@ const list = [{
 
 ]
 export default () => {
-    const [selectedCategoryId, setSelectedCategoryId] = useState(categories[0].id)
+    const selectedCategoryId = useSelector(state => state.menu.selectedCategoryId)
+    const categories = useSelector(state => state.menu.categories)
+    const dispatch = useDispatch()
     const filteredList = list.filter(item => item.categoryId === selectedCategoryId)
     return <div className='container'>
         <div className='toggler'>
             {categories.map(category => {
                 return <div key={category.id} className={'category-btn' + (selectedCategoryId === category.id ? 'active' : '')}
-                    onClick={() => setSelectedCategoryId(category.id)}>
+                    onClick={() => dispatch(changeCategory(category.id))}>
                     {category.title}
                 </div>
             })}
@@ -118,7 +103,7 @@ export default () => {
             {filteredList.map(item => {
                 return <div className='card' key={item.id}>
                     <div className="photo-container">
-                        <img className="card-img" src={item.imagePath} alt="Peson portrait" />
+                        <img className="card-img" src={item.imagePath} alt="pizza/coffee" />
                     </div>
                     <div className='card-text'>
                         <div>
