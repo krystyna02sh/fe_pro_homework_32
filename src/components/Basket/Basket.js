@@ -1,8 +1,8 @@
 import React from "react";
 const Basket = () => {
     return (
-        <div className='container'>
-            <h2>Basket</h2>
+        <div className='container koshik'>
+            <h2>Кошик</h2>
         </div>
     );
 }

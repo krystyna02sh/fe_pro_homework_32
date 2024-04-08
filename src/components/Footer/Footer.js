@@ -8,8 +8,8 @@ export default () => {
             <div className='contacts'>
                 <h5 className='contact'>Контактні дані</h5>
 
-                <p>Uzhhorod, Zakarpattia Oblast, Ukraine
-                    +380660000000</p>
+                <p>Uzhhorod, Zakarpattia Oblast, Ukraine</p>
+                <p><a href='tel:+380660000000'>+380660000000</a></p>
                 <ul>
                     <li className='work-time'>Понеділок
                         10:00 - 22:30</li>
@@ -28,7 +28,7 @@ export default () => {
                 </ul>
             </div>
             <div className='social'>
-                <div>  <a href='#'><img className='soc-adress' src={facebook}></img></a></div>
+                <div>  <a href='#'><img className='soc-adress ml' src={facebook}></img></a></div>
 
                 <div><a href='#'><img className='soc-adress' src={insta}></img></a></div>
 
