@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import menuReducer from './redux/menuReducer';
+import rootReducer from './redux/reducers';
 
 const store = configureStore({
-    reducer: {
-        menu: menuReducer
-    }
+    reducer: rootReducer,
 });
+
 
 export default store;

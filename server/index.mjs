@@ -20,3 +20,6 @@ f.listen({ port, host })
     .then(() => {
         console.log("Server is started")
     })
+f.setNotFoundHandler((request, reply) => {
+    return reply.sendFile('index.html')
+})

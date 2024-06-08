@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { changeCategory } from '../../redux/menuReducer';
+import { addItem } from '../../counterSlice';
 
 
 const list = [{
-    id: "fjgkyg",
+    id: "Peperoni",
     title: "Папероні",
     price: "270",
     imagePath: require('../Images/pizza.jpg').default,
@@ -12,7 +13,7 @@ const list = [{
     categoryId: "pizza"
 },
 {
-    id: "fарер",
+    id: "Vegeterian",
     title: "Вегетеріанська",
     price: "270",
     imagePath: require('../Images/pizza3.jpg').default,
@@ -20,7 +21,7 @@ const list = [{
     categoryId: "pizza"
 },
 {
-    id: "bljb",
+    id: "Margarita",
     title: "Маргарита",
     price: "250",
     imagePath: require('../Images/pizza2.jpg').default,
@@ -28,7 +29,7 @@ const list = [{
     categoryId: "pizza"
 },
 {
-    id: "fjkygdgdgd",
+    id: "Morska",
     title: "Морська",
     price: "350",
     imagePath: require('../Images/pizza5.jpg').default,
@@ -36,7 +37,7 @@ const list = [{
     categoryId: "pizza"
 },
 {
-    id: "fаfgjjр",
+    id: "Cheese",
     title: "Чотири сири",
     price: "290",
     imagePath: require('../Images/pizza6.jpg').default,
@@ -44,7 +45,7 @@ const list = [{
     categoryId: "pizza"
 },
 {
-    id: "blyjtyjtjb",
+    id: "Formajo",
     title: "Формаджо",
     price: "320",
     imagePath: require('../Images/pizza7.jpg').default,
@@ -52,7 +53,7 @@ const list = [{
     categoryId: "pizza"
 },
 {
-    id: "blyhfgfsddtjb",
+    id: "Espreso",
     title: "Еспресо",
     price: "30",
     imagePath: require('../Images/espreso.jpg').default,
@@ -60,7 +61,7 @@ const list = [{
     categoryId: "coffee"
 },
 {
-    id: "blgjjkhjkh",
+    id: "Americano",
     title: "Американо",
     price: "40",
     imagePath: require('../Images/americano.jpg').default,
@@ -68,7 +69,7 @@ const list = [{
     categoryId: "coffee"
 },
 {
-    id: "blvvvvvffrg",
+    id: "Cappuchino",
     title: "Капучино",
     price: "55",
     imagePath: require('../Images/capuchino.jpg').default,
@@ -76,12 +77,36 @@ const list = [{
     categoryId: "coffee"
 },
 {
-    id: "blhkkb",
+    id: "Late",
     title: "Лате",
     price: "75",
     imagePath: require('../Images/late.jpg').default,
     description: "витончений напій з еспресо, облитого гарячим молоком, який має ніжний смак та кремову текстуру, створюючи чудову гармонію смаків",
     categoryId: "coffee"
+},
+{
+    id: "morskaDiscount",
+    title: "Морська + кава(розмір М на вибір)",
+    price: "375",
+    imagePath: require('../Images/pizza5.jpg').default,
+    description: "Тісто для піци, соус томатний, моцарела, кальмари, креветки,мідії, лосось, базилік, оливкова олія",
+    categoryId: "discount"
+},
+{
+    id: "cheeseDiscount",
+    title: "Чотири сири + кава(розмір М на вибір)",
+    price: "315",
+    imagePath: require('../Images/pizza6.jpg').default,
+    description: "Тісто для піци, соус томатний, моцарела, помідори, перець, гриби, оливки",
+    categoryId: "discount"
+},
+{
+    id: "formajoDiscount",
+    title: "Формаджо + кава(розмір М на вибір)",
+    price: "340",
+    imagePath: require('../Images/pizza7.jpg').default,
+    description: "Тісто для піци, соус томатний, моцарела, базилік, оливкова олія",
+    categoryId: "discount"
 }
 
 ]
@@ -90,6 +115,7 @@ export default () => {
     const categories = useSelector(state => state.menu.categories)
     const dispatch = useDispatch()
     const filteredList = list.filter(item => item.categoryId === selectedCategoryId)
+
     return <div className='container'>
         <div className='toggler'>
             {categories.map(category => {
@@ -106,18 +132,19 @@ export default () => {
                         <img className="card-img" src={item.imagePath} alt="pizza/coffee" />
                     </div>
                     <div className='card-text'>
-                        <div>
-                            <h4 className='card-title'>{item.title}</h4>
-                            <p className='mt'>{item.description}</p>
-                            <div className="f-size">
+                        <div className='text-flex'>
+                            <div className='pizza-describe'><h4 className='card-title'>{item.title}</h4>
+                                <p className='mt'>{item.description}</p></div>
+                            <div className='button-buy'> <div className="f-size">
                                 <button className="size" type="button">S</button>
                                 <button className="size" type="button">M</button>
                                 <button className="size" type="button">L</button>
                             </div>
-                            <div className='flex'>
-                                <button type='button' className='but'>+Додати</button>
-                                <p className='price'> {item.price}грн</p>
-                            </div>
+                                <div className='flex'>
+                                    <button type='button' onClick={() => dispatch(addItem(item))} className='but'>+Додати</button>
+                                    <p className='price'> {item.price}грн</p>
+                                </div></div>
+
                         </div>
 
                     </div>

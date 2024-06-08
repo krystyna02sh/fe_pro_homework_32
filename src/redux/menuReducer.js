@@ -8,6 +8,11 @@ const categories = [{
     id: "coffee",
     title: "Кава"
 
+},
+{
+    id: "discount",
+    title: "Акції"
+
 }]
 
 const menuSlice = createSlice({
