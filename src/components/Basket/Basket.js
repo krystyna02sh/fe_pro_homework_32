@@ -9,7 +9,6 @@ const Basket = () => {
     const total = useSelector(state => state.counter.total)
     return (
         <div className='container koshik'>
-
             <div className="cart">
                 <div>
                     <h2>Кошик</h2>
