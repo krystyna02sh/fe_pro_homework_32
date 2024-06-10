@@ -125,7 +125,7 @@ export default () => {
                 </div>
             })}
         </div>
-        <div className='card-container'>
+        <div className='card-container main-container'>
             {filteredList.map(item => {
                 return <div className='card' key={item.id}>
                     <div className="photo-container">

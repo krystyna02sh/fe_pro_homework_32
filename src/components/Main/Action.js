@@ -5,7 +5,7 @@ import Counter from "../../Counter";
 
 const Action = ({ onClick }) => {
     return (
-        <div>
+        <div className="main-container">
             <MainImg />
             <Counter />
         </div>

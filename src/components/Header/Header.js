@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import buy from "../Images/basket.png";
-import CartIcon from './CartIcon';
 const Header = () => {
     return (
         <header><div className='container'>
@@ -17,7 +16,7 @@ const Header = () => {
                         <Link to="/menu">Меню</Link>
                     </li>
                     <li className='item'>
-                        <Link to="/basket"><img className='basket' src={buy} alt="basket"></img><CartIcon /></Link>
+                        <Link to="/basket"><img className='basket' src={buy} alt="basket"></img></Link>
 
                     </li>
                 </ul>
